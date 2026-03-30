@@ -67,40 +67,40 @@ def test_summarize_sales_debug_uses_units_key(data, expected):
     [
         pytest.param(
             [
-                {"product": "Notebook", "qty": 4, "unit_price": 2.5},
-                {"product": "Pen", "qty": 10, "unit_price": 1.2},
-                {"product": "Bag", "qty": 2, "unit_price": 25.0},
+                {"product": "Notebook", "units": 4, "unit_price": 2.5},
+                {"product": "Pen", "units": 10, "unit_price": 1.2},
+                {"product": "Bag", "units": 2, "unit_price": 25.0},
             ],
             (16, 72.0, 4.5),
             id="average-uses-total-units-example-data",
         ),
         pytest.param(
             [
-                {"product": "Stapler", "qty": 5, "unit_price": 9.99},
+                {"product": "Stapler", "units": 5, "unit_price": 9.99},
             ],
             (5, 49.95, 9.99),
             id="average-uses-total-units-single-record",
         ),
         pytest.param(
             [
-                {"product": "Tape", "qty": 1, "unit_price": 2.0},
-                {"product": "Paper", "qty": 9, "unit_price": 4.0},
+                {"product": "Tape", "units": 1, "unit_price": 2.0},
+                {"product": "Paper", "units": 9, "unit_price": 4.0},
             ],
             (10, 38.0, 3.8),
             id="average-uses-total-units-mixed-quantities",
         ),
         pytest.param(
             [
-                {"product": "Pen", "qty": 2, "unit_price": 5.0},
-                {"product": "Pen", "qty": 3, "unit_price": 7.0},
+                {"product": "Pen", "units": 2, "unit_price": 5.0},
+                {"product": "Pen", "units": 3, "unit_price": 7.0},
             ],
             (5, 31.0, 6.2),
             id="average-uses-total-units-repeated-products",
         ),
         pytest.param(
             [
-                {"product": "Glue", "qty": 3, "unit_price": 1.99},
-                {"product": "Scissors", "qty": 2, "unit_price": 2.49},
+                {"product": "Glue", "units": 3, "unit_price": 1.99},
+                {"product": "Scissors", "units": 2, "unit_price": 2.49},
             ],
             (5, 10.95, 2.19),
             id="average-rounds-to-two-decimals",
